@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>book memories </title>
+<!-- 	<script src="http://myserver/lib/load.js"></script> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+</head>
+<body>
+	<div class="container" ng-controller="AppCtrl">
+		<h1>Book Memories</h1>
+		<table class="table">
+		    <thead>
+				<tr>
+					<td>Name OF Book</td>
+					<td>Author</td>
+					<td>Thesis</td>
+					<td>Number of page you read </td>
+					<td>Date</td>
+					<td>Action</td>
+					<th>&nbsp;</th>
+
+				</tr>
+			</thead>
+			<tbody>
+			    <tr>
+			    	<td><input class="form-control" ng-model='book.Name'></td>
+			    	<td><input class="form-control" ng-model='book.Author'></td>
+			    	<td><input class="form-control" ng-model='book.Thesis'></td>
+			    	<td><input class="form-control" ng-model='book.NumberOfBageYouRead'></td>
+			    	<td><input class="form-control" ng-model='book.Date'></td>
+			    	<td> <button class="btn btn-primary" ng-click="addContant()"> add </button></td>
+			    </tr>
+				<tr ng-repeat="book in bookList">
+					<td>{{book.Name}}</td>
+					<td>{{book.Author}}</td>
+					<td>{{book.Thesis}}</td>
+					<td>{{book. NumberOfBageYouRead }}</td>
+					<td>{{book.Date}}</td>
+					<td > <button class="btn btn-danger" ng-click="remove(book._id)">Remove</button></td>
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+	<script src="controller/controller.js"></script>
+
+
+</body>
+</html>
